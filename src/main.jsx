@@ -1,11 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import { Netflix } from './Loop';
+import { HandleEvent } from './Revise';
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <Netflix></Netflix>
+<HandleEvent></HandleEvent>
   </StrictMode>
 );
