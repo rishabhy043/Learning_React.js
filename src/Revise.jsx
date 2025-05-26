@@ -1,49 +1,41 @@
 import React from 'react';
 
-export const HandleEvent = () => {
-  const handleClick = () => {
-    alert('Hey, how are you');
-  };
-
-  const handleMouseEnter = () => {
-    alert('This is Mouse Enter event');
-  };
-
+export const EventProps = () => {
   const buttonStyle = {
-    margin: '10px',
-    padding: '10px 20px',
-    backgroundColor: '#4CAF50',
+    background: 'linear-gradient(135deg, #6e8efb, #a777e3)',
     color: 'white',
-    border: 'none',
-    borderRadius: '8px',
-    cursor: 'pointer',
+    padding: '14px 28px',
     fontSize: '16px',
-    transition: 'background-color 0.3s ease',
+    fontWeight: '600',
+    border: 'none',
+    borderRadius: '12px',
+    cursor: 'pointer',
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+    transition: 'all 0.3s ease-in-out',
+  };
+
+  const handleClick = (user) => {
+    alert(`Say hi to ${user}`);
+  };
+
+  const handleHover = () => {
+    alert(`Say hi to everyone from anywhere`);
+  };
+
+  const sayWelcome = () => {
+    alert('GOOD MORNING');
   };
 
   return (
     <>
-      <button style={buttonStyle} onClick={handleClick}>
-        onClick
+      <button style={buttonStyle} onClick={() => handleClick('Aman')}>
+        HandleClick
       </button>
-
-      <button style={buttonStyle} onMouseEnter={handleMouseEnter}>
-        onMouseEnter
+      <button style={buttonStyle} onMouseEnter={handleHover}>
+        HandleHover
       </button>
-
-      <button style={buttonStyle} onMouseLeave={handleClick}>
-        onMouseLeave
-      </button>
-
-      <button style={buttonStyle} onMouseDown={handleMouseEnter}>
-        onMouseDown
-      </button>
-
-      <button
-        style={buttonStyle}
-        onClick={() => alert('Heyy this is MouseClick Event')}
-      >
-        onClick (inline)
+      <button style={buttonStyle} onClick={sayWelcome}>
+        GREET
       </button>
     </>
   );
