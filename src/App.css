@@ -1,0 +1,8 @@
+*{
+  /* color: rgb(255, 3, 3); */
+}
+.card{
+  display: flex;
+
+  /* border: 2px solid black; */
+}
