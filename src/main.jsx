@@ -7,9 +7,7 @@ import { AcessUser } from './StateChallenge';
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-{/* <HandleEvent></HandleEvent> */}
-{/* <States></States> */}
+<StrictMode>
 <AcessUser></AcessUser>
-  </StrictMode>
+</StrictMode>
 );
