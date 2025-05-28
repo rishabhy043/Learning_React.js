@@ -1,13 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import { States} from './Revise';
-import { AcessUser } from './StateChallenge';
+import { LiftingStates } from './components/Hooks/LiftingStatesUp.jsx';
 
 
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
-<AcessUser></AcessUser>
+<LiftingStates></LiftingStates>
 </StrictMode>
 );

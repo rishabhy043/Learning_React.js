@@ -10,24 +10,21 @@ export const AcessUser = () => {
   ]);
 
   console.log(users);
+  const userLenght = users.length;
 
-  const userCount = users.length;
-
-  const userAvg =
-    users.reduce((accum, currElem) => accum + currElem.age, 0) / userCount;
-
+  const usersAvg = users.reduce((accum, currElem) => accum + currElem.age, 0) / userLenght;
   return (
     <>
-      <h2>Total users: {userCount}</h2>
-      <h2>Average age: {userAvg.toFixed(2)}</h2>
-
-      <ul>
-        {users.map((curElem, index) => (
-          <li key={index}>
-            {curElem.name} - {curElem.age}
-          </li>
-        ))}
-      </ul>
+      <h1>LENGHT: {userLenght}</h1>
+      <h2>AVERAGE: {usersAvg}</h2>
+      <p>USERS:
+        {
+          users.map((user, index) => (
+            <li key={index}>{user.name} - {user.age}</li>
+          ))
+        }
+      </p>
     </>
-  );
+
+  )
 };
