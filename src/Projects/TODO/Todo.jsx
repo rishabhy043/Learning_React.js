@@ -9,10 +9,12 @@ export const Todo = () => {
     //user input field m jo task likhega continuesly usse save krne k liye
     // eslint-disable-next-line no-unused-vars
     const [task, setTask] = useState([]);
+    // for date and time
+    const[datetime, setdatetime] = useState("");
 
     //To hahndle the input text of any input field
     // Or What user types uska Data 
-    const handleInputChange=(value) =>{
+    const handleInputChange = (value) => {
         setInputValue(value);
     }
     // When we submit the form automatically re-rendered to stop this
@@ -22,10 +24,10 @@ export const Todo = () => {
         //if inputValue is empty then return nothing; no action performed on empty
         if (!inputValue) return;
 
-         // if same value exists in inputvalue do nothing
+        // if same value exists in inputvalue do nothing
         if (task.includes(inputValue)) {
-             setInputValue("");
-             return;
+            setInputValue("");
+            return;
         }
 
         //use to save previos task (...) SPREAD OPERATOR , ARRAY m previos task then recent value STORED
@@ -34,10 +36,20 @@ export const Todo = () => {
         setInputValue("")
     }
 
+    // TODO DATE AND TIME 
+    //TIME NOT UPDATED EVERY SECOND AUTOMATICALY NEED REFRESH SO SETINTERVAL USED
+     setInterval(() => {
+          const now = new Date();
+    const formattedDate= now.toLocaleDateString();
+    const formattedTime= now.toLocaleTimeString();
+setdatetime(`${formattedDate} - ${formattedTime}`)
+    }, 1000);
+  
     return (
         <section className="todo-container">
             <header>
                 <h1>TODO-LIST</h1>
+                <h2 className='date-time'>{datetime}</h2>
             </header>
             <section className='form'>
                 <form onSubmit={handleFormSublit}>
