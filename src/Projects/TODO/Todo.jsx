@@ -10,7 +10,7 @@ export const Todo = () => {
     // eslint-disable-next-line no-unused-vars
     const [task, setTask] = useState([]);
     // for date and time
-    const[datetime, setdatetime] = useState("");
+    const [datetime, setdatetime] = useState("");
 
     //To hahndle the input text of any input field
     // Or What user types uska Data 
@@ -38,13 +38,27 @@ export const Todo = () => {
 
     // TODO DATE AND TIME 
     //TIME NOT UPDATED EVERY SECOND AUTOMATICALY NEED REFRESH SO SETINTERVAL USED
-     setInterval(() => {
-          const now = new Date();
-    const formattedDate= now.toLocaleDateString();
-    const formattedTime= now.toLocaleTimeString();
-setdatetime(`${formattedDate} - ${formattedTime}`)
+    setInterval(() => {
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString();
+        const formattedTime = now.toLocaleTimeString();
+        setdatetime(`${formattedDate} - ${formattedTime}`)
     }, 1000);
-  
+
+    const handleDeleteTodo = (value) => {
+        console.log(task);
+        console.log(value);
+        //clicked element NOT DELETED AND ALL ARE DELETED
+        // const updateTask = task.filter((curTask) => curTask === value);
+
+        // CLICKED ELEMENT ARE DELETED
+        const updateTask = task.filter((curTask) => curTask === value);
+        setTask(updateTask)
+    }
+
+    const handleclearbtn = () => {
+        setTask([]);
+    }
     return (
         <section className="todo-container">
             <header>
@@ -66,19 +80,22 @@ setdatetime(`${formattedDate} - ${formattedTime}`)
                     </div>
                 </form>
             </section>
-            <section className='myUnorderedList'>
+            <section className='myUnOrdList'>
                 <ul>
                     {task.map((curTask, index) => {
                         return (
                             <li key={index} className='todo-item'>
                                 <span>{curTask}</span>
                                 <button className='check-btn'><FaCheckCircle /></button>
-                                <button className='delete-btn'><MdDeleteForever /></button>
+                                <button className='delete-btn' onClick={() => handleDeleteTodo(curTask)}><MdDeleteForever /></button>
                             </li>
                         )
                     })
                     }
                 </ul>
+            </section>
+            <section>
+                <button className='clear-btn' onClick={handleclearbtn}>CLEAR ALL</button>
             </section>
         </section>
     )
