@@ -1,0 +1,73 @@
+import './Todo.css';
+import { FaCheckCircle } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
+import React, { useState } from 'react';
+
+export const Todo = () => {
+    // eslint-disable-next-line no-undef
+    const [inputValue, setInputValue] = useState("");
+    //user input field m jo task likhega continuesly usse save krne k liye
+    // eslint-disable-next-line no-unused-vars
+    const [task, setTask] = useState([]);
+
+    //To hahndle the input text of any input field
+    // Or What user types uska Data 
+    const handleInputChange=(value) =>{
+        setInputValue(value);
+    }
+    // When we submit the form automatically re-rendered to stop this
+    const handleFormSublit = (event) => {
+        event.preventDefault();
+
+        //if inputValue is empty then return nothing; no action performed on empty
+        if (!inputValue) return;
+
+         // if same value exists in inputvalue do nothing
+        if (task.includes(inputValue)) {
+             setInputValue("");
+             return;
+        }
+
+        //use to save previos task (...) SPREAD OPERATOR , ARRAY m previos task then recent value STORED
+        setTask((prevTask) => [...prevTask, inputValue])
+
+        setInputValue("")
+    }
+
+    return (
+        <section className="todo-container">
+            <header>
+                <h1>TODO-LIST</h1>
+            </header>
+            <section className='form'>
+                <form onSubmit={handleFormSublit}>
+                    <div>
+                        <input type="text"
+                            autoComplete='off'
+                            className='todo-input'
+                            value={inputValue}
+                            onChange={(event) => handleInputChange(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <button type='submit' className='todo-list'></button>
+                    </div>
+                </form>
+            </section>
+            <section className='myUnorderedList'>
+                <ul>
+                    {task.map((curTask, index) => {
+                        return (
+                            <li key={index} className='todo-item'>
+                                <span>{curTask}</span>
+                                <button className='check-btn'><FaCheckCircle /></button>
+                                <button className='delete-btn'><MdDeleteForever /></button>
+                            </li>
+                        )
+                    })
+                    }
+                </ul>
+            </section>
+        </section>
+    )
+}
