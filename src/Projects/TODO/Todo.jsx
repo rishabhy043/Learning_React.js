@@ -8,7 +8,15 @@ export const Todo = () => {
     const [inputValue, setInputValue] = useState("");
     //user input field m jo task likhega continuesly usse save krne k liye
     // eslint-disable-next-line no-unused-vars
-    const [task, setTask] = useState([]);
+
+    // const [task, setTask] = useState([]);              ---> now getting data from localstorage
+
+    const todokey = "react-todo";
+    const [task, setTask] = useState(() => {
+            const rawTodos = localStorage.getItem(todokey);
+            if (!rawTodos) return [];
+            return JSON.parse(rawTodos);
+    });
     // for date and time
     const [datetime, setdatetime] = useState("");
 
@@ -29,7 +37,6 @@ export const Todo = () => {
             setInputValue("");
             return;
         }
-
         //use to save previos task (...) SPREAD OPERATOR , ARRAY m previos task then recent value STORED
         setTask((prevTask) => [...prevTask, inputValue])
 
@@ -52,13 +59,17 @@ export const Todo = () => {
         // const updateTask = task.filter((curTask) => curTask === value);
 
         // CLICKED ELEMENT ARE DELETED
-        const updateTask = task.filter((curTask) => curTask === value);
+        const updateTask = task.filter((curTask) => curTask !== value);
         setTask(updateTask)
     }
 
     const handleclearbtn = () => {
         setTask([]);
     }
+
+    // Todo add data to Local Storage
+    localStorage.setItem(todokey, JSON.stringify(task));
+
     return (
         <section className="todo-container">
             <header>
