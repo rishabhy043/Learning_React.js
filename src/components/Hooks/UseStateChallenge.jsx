@@ -18,13 +18,13 @@ export const UseStateChallenge = () => {
         <div className="input">
             <div>count: {count}</div>
             <label>
-                    STEPS: 
-                    <input 
-                        type="number" 
-                        value={step} 
-                        onChange={(e) => setstep(Number(e.target.value))} 
-                    />
-                </label>
+                STEPS:
+                <input
+                    type="number"
+                    value={step}
+                    onChange={(e) => setstep(Number(e.target.value))}
+                />
+            </label>
         </div>
         <div>
             <button onClick={Incbtn} disabled={count >= 100}>INCREMENT</button>
