@@ -40,13 +40,13 @@ export const ContactForm = () => {
                 />
 
                 <label htmlFor="Message"><b>Message</b></label>
-                    <textarea
-                        placeholder="Type your message"
-                        name="Message"
-                        required
-                        value={user.Message}
-                        onChange={handleInputChange}
-                    />
+                <textarea
+                    placeholder="Type your message"
+                    name="Message"
+                    required
+                    value={user.Message}
+                    onChange={handleInputChange}
+                />
 
                 <button type="submit">SUBMIT</button>
             </div>
