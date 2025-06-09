@@ -1,11 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import { RegistrationFormAgain } from './components/Hooks/RegistrationForm/formAgain';
+import { LoginForm } from './components/Hooks/RegistrationForm/LoginForm';
 
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
-<RegistrationFormAgain></RegistrationFormAgain>
+<LoginForm></LoginForm>
 </StrictMode>
 );
