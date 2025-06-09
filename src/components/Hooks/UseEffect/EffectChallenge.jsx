@@ -10,7 +10,7 @@ export const UseEffectChallenge = () => {
     // }, [name])
 
     useEffect(() => {
-        document.title= `count: ${count}`  // Change title Content
+        document.title = `count: ${count}`  // Change title Content
     }, [count])            // continusly changing value when count value changes
     return (<>
         <div className="container effect-container">
