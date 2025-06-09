@@ -1,11 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import { UseEffectHook } from './components/Hooks/UseEffectHook';
+import { UseEffectPractice } from './components/Hooks/UseEffect';
 
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
-<UseEffectHook></UseEffectHook>
+<UseEffectPractice></UseEffectPractice>
 </StrictMode>
 );
