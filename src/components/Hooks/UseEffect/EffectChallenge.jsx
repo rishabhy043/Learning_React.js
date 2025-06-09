@@ -5,9 +5,13 @@ export const UseEffectChallenge = () => {
     const [count, setcount] = useState(0);
     const [name, setname] = useState("");
 
+    // useEffect(() => {
+    //     console.log(name);
+    // }, [name])
+
     useEffect(() => {
-        console.log(name);
-    }, [name])
+        document.title= `count: ${count}`  // Change title Content
+    }, [count])            // continusly changing value when count value changes
     return (<>
         <div className="container effect-container">
             <h1>Effect Challenge</h1>
