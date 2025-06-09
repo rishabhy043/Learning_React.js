@@ -11,7 +11,7 @@ export const UseEffectPractice = () => {
         <div className="container effect-container">
             <h1>UseEffect Hook</h1>
             <p>count: {count}</p>
-            <button onClick={() =>setcount(count+1)}>Increment</button>
+            <button onClick={() =>setcount(count + 1)}>Increment</button>
         </div>
     </>)
 }
