@@ -1,11 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import { CLeanUp } from './components/Hooks/UseEffect/CLeanUpFunction';
+import { HowNotToFetchDataApi } from './components/ApiLearning/ApiNot';
+
 
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
-<CLeanUp></CLeanUp>
+<HowNotToFetchDataApi></HowNotToFetchDataApi>
 </StrictMode>
 );
