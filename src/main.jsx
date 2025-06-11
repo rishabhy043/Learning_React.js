@@ -1,12 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './App.css';
-import { HowToFetchDataApi } from './components/ApiLearning/ApiNot';
-
-
+import { PokemonApi } from './components/ApiLearning/PokeMonApi';
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
-<HowToFetchDataApi></HowToFetchDataApi>
+<PokemonApi></PokemonApi>
 </StrictMode>
 );
