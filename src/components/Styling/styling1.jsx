@@ -1,4 +1,4 @@
-import seriesData from "../api/seriesData.json"; // Make sure the file exists and extension is .json
+import seriesData from "../../api/seriesData.json"; // Make sure the file exists and extension is .json
 import {SeriesCard} from ".components/styling2"; // SeriesCard component defined here
 // import './index.css'
 import '..components/styling.css'
