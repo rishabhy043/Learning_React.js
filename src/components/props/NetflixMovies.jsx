@@ -1,4 +1,4 @@
-import seriesData from './api/seriesData.json'
+import seriesData from '../../api/seriesData.json'
 const MovieList =()=>{
 return(
 <>
