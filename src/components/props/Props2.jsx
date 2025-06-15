@@ -1,4 +1,4 @@
-import seriesData from './api/seriesData.json';
+import seriesData from '../../api/seriesData.json';
 import {SeriesCard} from './Prop1';
 const PropsUse = () => {
   return (
