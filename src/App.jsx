@@ -1,10 +1,11 @@
-import { Home } from "./components/Hooks/Customhook/Home";
-import { BioProvider } from "./components/Hooks/Customhook/custonhook"; // correct the spelling from 'custonHook' to 'customHook'
+import { HomeComponent } from "./components/Hooks/useHOOK/Home";
+import { BioContext } from "./components/Hooks/useHOOK/index";
+
 
 export const App = () => {
   return (
-    <BioProvider>
-      <Home />
-    </BioProvider>
+    <BioContext>
+      <HomeComponent></HomeComponent>
+    </BioContext>
   );
 };
