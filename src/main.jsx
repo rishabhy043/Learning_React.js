@@ -1,11 +1,11 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./App";
+import { Counter } from "./components/Hooks/UseReducer";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App></App>
+    <Counter></Counter>
   </React.StrictMode>
 );
