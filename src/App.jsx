@@ -1,11 +1,12 @@
-import { HomeComponent } from "./components/Hooks/ContextAPI/useHOOK/Home";
-import { BioContext } from "./components/Hooks/ContextAPI/useHOOK/index";
+import React from "react";
+import { ThemeProvider ,ThemeContext } from "./Projects/DarkLight/DarkLight";
 
 
 export const App = () => {
   return (
-    <BioContext>
-      <HomeComponent></HomeComponent>
-    </BioContext>
+   <ThemeContext.Provider>
+    <ThemeProvider></ThemeProvider>
+   </ThemeContext.Provider>
   );
 };
+
