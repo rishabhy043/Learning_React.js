@@ -1,9 +1,11 @@
-import { createContext } from "react"
-import { BioProvider } from "./custonHook"
+import { useCustomHook } from "./custonhook"; // make sure the path is correct
 
-export const Home = () =>{
-    const info = BioProvider(createContext());
-    return(<>
-    <h1>HELLO This is my introduction: {info}</h1>
-    </>)
-}
+export const Home = () => {
+  const info = useCustomHook();
+
+  return (
+    <>
+      <h1>HELLO This is my introduction: {info}</h1>
+    </>
+  );
+};

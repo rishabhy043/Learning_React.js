@@ -1,16 +1,24 @@
-import { createContext } from "react"
+import { createContext, useContext } from "react";
 
-export const BioProvider = createContext();
+// 1. Create the context
+export const BioContext = createContext();
 
-export const BioContext = ({ Children }) => {
-     const info = "Rishabh yadav from Sultanpur"
-    return (<>
-        <BioProvider.Provider value={info}>
-            {Children}
-        </BioProvider.Provider>
-    </>)
-}
+// 2. Create the Provider component
+export const BioProvider = ({ children }) => {
+  const info = "Rishabh Yadav from Sultanpur";
 
-// custom hook
+  return (
+    <BioContext.Provider value={info}>
+      {children}
+    </BioContext.Provider>
+  );
+};
 
-export const use
+// 3. Create a custom hook to use the context
+export const useCustomHook = () => {
+  const context = useContext(BioContext);
+  if (!context) {
+    throw new Error("useCustomHook must be used within a BioProvider");
+  }
+  return context;
+};
