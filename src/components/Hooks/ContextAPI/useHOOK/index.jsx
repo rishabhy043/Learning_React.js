@@ -1,7 +1,7 @@
 import { use } from "react"
 
 // export const BioContext = createContext();
-export const BioContext = useHook();
+export const BioContext = useHook;
 
 export const UseHook = ({ children }) => {
     const Name = "Rishabh yadav from sultanpur"

@@ -1,5 +1,5 @@
-import { HomeComponent } from "./components/Hooks/useHOOK/Home";
-import { BioContext } from "./components/Hooks/useHOOK/index";
+import { HomeComponent } from "./components/Hooks/ContextAPI/useHOOK/Home";
+import { BioContext } from "./components/Hooks/ContextAPI/useHOOK/index";
 
 
 export const App = () => {
