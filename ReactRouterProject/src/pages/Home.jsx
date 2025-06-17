@@ -1,5 +1,5 @@
-export const Movie = () => {
+export const Home = () => {
     return (<>
-        <h1>Movie Page</h1>
+        <h1>Home Page</h1>
     </>)
 }
