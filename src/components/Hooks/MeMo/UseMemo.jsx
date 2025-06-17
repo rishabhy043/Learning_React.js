@@ -9,13 +9,13 @@ const ExpensiveComponent = () => {
         for (i = 0; i <= 10000000; i++) {
             i = i + 1;
         }
-        return i+2;
+        return i;
     };
 
     // const total = sum();
 
     // UseMemo aplied here
-    const total = useMemo(() => sum() , [])
+    const total = useMemo(() => sum(), [])
 
     return (<>
         <p>sum : {total}</p>
