@@ -1,12 +1,11 @@
 import React from "react";
 import { ThemeProvider ,ThemeContext } from "./Projects/DarkLight/DarkLight";
-
+import { Movie } from "./Pages/Movie";
 
 export const App = () => {
-  return (
-   <ThemeContext.Provider>
-    <ThemeProvider></ThemeProvider>
-   </ThemeContext.Provider>
+  return (<>
+  <Movie></Movie>
+  </>
   );
 };
 
