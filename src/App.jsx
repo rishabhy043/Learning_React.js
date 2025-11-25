@@ -1,10 +1,9 @@
 import React from "react";
-import { ThemeProvider ,ThemeContext } from "./Projects/DarkLight/DarkLight";
-import { Movie } from "./Pages/Movie";
+import Reduxlearn from "./Redux/reduxlearn";
 
 export const App = () => {
   return (<>
-  <Movie></Movie>
+  <Reduxlearn></Reduxlearn>
   </>
   );
 };
